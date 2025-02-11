@@ -13,8 +13,8 @@
 
 <title>Selected Publications</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -60,6 +60,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -80,6 +81,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -137,11 +141,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -170,8 +178,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -232,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -270,22 +271,56 @@ $(document).ready(function () {
 <div id="statistical-methods" class="section level3">
 <h3>Statistical Methods</h3>
 <ol style="list-style-type: decimal">
-<li><p><strong>O’Connell MJ</strong> and Lock EF. (2019). Linked matrix factorization. Biometrics, 75(2), 582-592.</p></li>
-<li><p>Grinde, K, Arbet, J, Green, A, O’Connell MJ, Valcarcel, A, Westra, J, Tintle, N. (2017). Illustrating, quantifying and correcting for bias in post-hoc testing strategies: an application to gene-based rare variant tests of association. Frontiers in Genetics, 8:117.</p></li>
+<li><p>Dennis T, Rubin-McGregor J, <strong>O’Connell MJ</strong>.
+(2024). Power analysis for zero-inflated Poisson and negative binomial
+generalized linear models using Monte Carlo simulation. <em>Journal of
+Statistical Computation and Simulation</em>, 1-18. <a
+href="https://doi.org/10.1080/00949655.2024.2440796"
+class="uri">https://doi.org/10.1080/00949655.2024.2440796</a></p></li>
+<li><p>Hastings J, Lee D, <strong>O’Connell MJ</strong>. (2024).
+Batch-effect correction in single-cell sequencing data using JIVE.
+<em>Bioinformatics Advances,</em> 4(1), vbae134. <a
+href="https://doi.org/10.1093/bioadv/vbae134"
+class="uri">https://doi.org/10.1093/bioadv/vbae134</a></p></li>
+<li><p><strong>O’Connell MJ</strong> and Lock EF. (2019). Linked matrix
+factorization. <em>Biometrics</em>, 75(2), 582-592.</p></li>
+<li><p>Grinde, K, Arbet, J, Green, A, <strong>O’Connell MJ</strong>,
+Valcarcel, A, Westra, J, Tintle, N. (2017). Illustrating, quantifying
+and correcting for bias in post-hoc testing strategies: an application
+to gene-based rare variant tests of association. <em>Frontiers in
+Genetics</em>, 8:117.</p></li>
 </ol>
 </div>
 <div id="collaborative-work" class="section level3">
 <h3>Collaborative Work</h3>
 <ol style="list-style-type: decimal">
-<li><p>Upreti A, Padula SL, Tangeman JA, Wagner BD, <strong>O’Connell MJ</strong>, Jaquish TJ, Palko R, Mantz C, Anand D, Lovicu FJ, Lachke SA, Robinson ML. (2023). Lens epithelial explants treated with vitreous humor undergo alterations in chromatin landscape with concurrent activation of genes associated with fiber cell differentiation and innate immune response. Cells, 12, 501. <a href="https://doi.org/10.3390/cells12030501" class="uri">https://doi.org/10.3390/cells12030501</a>.</p></li>
-<li><p>Burns MPA, <strong>O’Connell MJ</strong>, Schaeffer PJ, Berg DJ. (2022). Elevated salinity and temperature associated with climate change threaten the survival and conservation of desert spring amphipods. Aquatic Conservation: Marine and Freshwater Ecosystems, 32(3): 457-465. <a href="https://doi.org/10.1002/aqc.3752" class="uri">https://doi.org/10.1002/aqc.3752</a></p></li>
-<li><p>Grannon KY, <strong>O’Connell MJ</strong>, Larson N, Pelletier JE, Nanney MS. (2018). State agency implementation support of weight-related school policies and obesity prevalence linkages. Journal of School Health, 88(9):685-692.</p></li>
+<li><p>Upreti A, Padula SL, Tangeman JA, Wagner BD, <strong>O’Connell
+MJ</strong>, Jaquish TJ, Palko R, Mantz C, Anand D, Lovicu FJ, Lachke
+SA, Robinson ML. (2023). Lens epithelial explants treated with vitreous
+humor undergo alterations in chromatin landscape with concurrent
+activation of genes associated with fiber cell differentiation and
+innate immune response. <em>Cells</em>, 12, 501. <a
+href="https://doi.org/10.3390/cells12030501"
+class="uri">https://doi.org/10.3390/cells12030501</a>.</p></li>
+<li><p>Burns MPA, <strong>O’Connell MJ</strong>, Schaeffer PJ, Berg DJ.
+(2022). Elevated salinity and temperature associated with climate change
+threaten the survival and conservation of desert spring amphipods.
+<em>Aquatic Conservation: Marine and Freshwater Ecosystems</em>, 32(3):
+457-465. <a href="https://doi.org/10.1002/aqc.3752"
+class="uri">https://doi.org/10.1002/aqc.3752</a></p></li>
+<li><p>Grannon KY, <strong>O’Connell MJ</strong>, Larson N, Pelletier
+JE, Nanney MS. (2018). State agency implementation support of
+weight-related school policies and obesity prevalence linkages.
+<em>Journal of School Health</em>, 88(9):685-692.</p></li>
 </ol>
 </div>
 <div id="software" class="section level3">
 <h3>Software</h3>
 <ol style="list-style-type: decimal">
-<li><strong>O’Connell MJ</strong> and Lock EF. (2016). r.jive: Perform JIVE Decompositions for Multi-Source Data. R package version 2.1. <a href="http://CRAN.R-project.org/package=r.jive" class="uri">http://CRAN.R-project.org/package=r.jive</a></li>
+<li><strong>O’Connell MJ</strong> and Lock EF. (2016). r.jive: Perform
+JIVE Decompositions for Multi-Source Data. R package version 2.1. <a
+href="http://CRAN.R-project.org/package=r.jive"
+class="uri">http://CRAN.R-project.org/package=r.jive</a></li>
 </ol>
 </div>
 

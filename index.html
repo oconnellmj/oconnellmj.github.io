@@ -13,8 +13,8 @@
 
 <title>Michael J. O’Connell</title>
 
-<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -60,6 +60,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -80,6 +81,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -137,11 +141,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -170,8 +178,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -232,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -263,16 +264,31 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Michael J. O’Connell</h1>
-<h3 class="subtitle">Assistant Professor, Department of Statistics, Miami University</h3>
+<h3 class="subtitle">Assistant Professor, Department of Statistics,
+Miami University</h3>
 
 </div>
 
 
 <div style="display: flex;">
 <div>
-<p>I am originally from Ohio and earned my Bachelor’s degree at Miami University in 2013. After getting my Ph.D. in biostatistics at the University of Minnesota, I returned to Miami as a faculty member in the Department of Statistics in 2018. My research mostly falls under the areas of dimension reduction and bioinformatics.</p>
-<p>Outside of work, I love playing and watching football. Being from the Cincinnati area, I am a huge Bengals fan. My wife is from Minnesota, so we also follow the Vikings. You may see me using NFL data from time-to-time for in-class examples, and I have occasionally dabbled in sports analytics projects. When I was in graduate school, I led a flag football team of all biostatistics students to an intramural championship.</p>
-<p>Another hobby that I have is music. I played trombone in the Miami University Marching Band when I was a student, and I also participated in Steel Band, Symphony Band, Wind Ensemble, Jazz Band, and Pep Band. I also enjoy playing guitar.</p>
+<p>I am originally from Ohio and earned my Bachelor’s degree at Miami
+University in 2013. After getting my Ph.D. in biostatistics at the
+University of Minnesota, I returned to Miami as a faculty member in the
+Department of Statistics in 2018. My research mostly falls under the
+areas of dimension reduction and bioinformatics. I have also recently
+been working with methods for zero-inflated data.</p>
+<p>Outside of work, I love playing and watching football. Being from the
+Cincinnati area, I am a huge Bengals fan. My wife is from Minnesota, so
+we also follow the Vikings. You may see me using NFL data from
+time-to-time for in-class examples, and I have occasionally dabbled in
+sports analytics projects. When I was in graduate school, I led a flag
+football team of all biostatistics students to an intramural
+championship.</p>
+<p>Another hobby that I have is music. I played trombone in the Miami
+University Marching Band when I was a student, and I also participated
+in Steel Band, Symphony Band, Wind Ensemble, Jazz Band, and Pep Band. I
+also enjoy playing guitar.</p>
 <div id="education" class="section level3">
 <h3>Education</h3>
 <ul>
@@ -280,16 +296,18 @@ $(document).ready(function () {
 <li><p>Ph.D., Biostatistics, University of Minnesota, 2018</p></li>
 </ul>
 </div>
-<div id="current-courses-fall-2023" class="section level3">
-<h3>Current Courses (Fall 2023)</h3>
+<div id="current-courses-spring-2025" class="section level3">
+<h3>Current Courses (Spring 2025)</h3>
 <ul>
-<li><p>STA 309 (Building, Managing and Exploring Data Sets in Analytics)</p></li>
-<li><p>STA 475 (Data Analysis Practicum)</p></li>
+<li>STA 309 (Building, Managing and Exploring Data Sets in
+Analytics)</li>
 </ul>
 </div>
 <div id="research-interests" class="section level3">
 <h3>Research Interests</h3>
-<p>I am primarily interested in multi-source data, high-dimensional data, and statistical genetics. On the application side, I am interested in cancer, toxicology, and infectious disease research.</p>
+<p>I am primarily interested in multi-source data, high-dimensional
+data, and statistical genetics. On the application side, I am interested
+in cancer, toxicology, and infectious disease research.</p>
 </div>
 </div>
 <div>
