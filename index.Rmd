@@ -1,0 +1,46 @@
+---
+title: "Michael J. O'Connell"
+subtitle: "Assistant Professor, Department of Statistics, Miami University"
+---
+
+:::: {style="display: flex;"}
+
+::: {}
+
+I am originally from Ohio and earned my Bachelor's degree at Miami University in 2013. After getting my Ph.D. in biostatistics at the University of Minnesota, I returned to Miami as a faculty member in the Department of Statistics in 2018. My research mostly falls under the areas of dimension reduction and bioinformatics. I have also recently been working with methods for zero-inflated data. 
+
+Outside of work, I love playing and watching football. Being from the Cincinnati area, I am a huge Bengals fan. My wife is from Minnesota, so we also follow the Vikings. You may see me using NFL data from time-to-time for in-class examples, and I have occasionally dabbled in sports analytics projects. When I was in graduate school, I led a flag football team of all biostatistics students to an intramural championship. 
+
+Another hobby that I have is music. I played trombone in the Miami University Marching Band when I was a student, and I also participated in Steel Band, Symphony Band, Wind Ensemble, Jazz Band, and Pep Band. I also enjoy playing guitar. 
+
+### Education
+
+* B.S., Microbiology, Miami University, 2013
+
+* Ph.D., Biostatistics, University of Minnesota, 2018
+
+### Current Courses (Spring 2025)
+
+* STA 309 (Building, Managing and Exploring Data Sets in Analytics)
+
+### Research Interests
+
+I am primarily interested in multi-source data, high-dimensional data, and statistical genetics. On the application side, I am interested in cancer, toxicology, and infectious disease research. 
+
+:::
+
+
+::: {}
+
+```{r, echo=F}
+knitr::include_graphics("O'Connell Michael O10519.jpg", dpi=300)
+```
+
+:::
+
+::::
+
+
+
+
+

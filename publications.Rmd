@@ -1,0 +1,54 @@
+---
+title: "Selected Publications"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+### Statistical Methods
+
+1.  Dennis T, Rubin-McGregor J, **O’Connell MJ**. (2024). Power analysis
+    for zero-inflated Poisson and negative binomial generalized linear
+    models using Monte Carlo simulation. *Journal of Statistical
+    Computation and Simulation*, 1-18.
+    <https://doi.org/10.1080/00949655.2024.2440796>
+
+2.  Hastings J, Lee D, **O’Connell MJ**. (2024). Batch-effect correction
+    in single-cell sequencing data using JIVE. *Bioinformatics
+    Advances,* 4(1), vbae134. <https://doi.org/10.1093/bioadv/vbae134>
+
+3.  **O’Connell MJ** and Lock EF. (2019). Linked matrix factorization.
+    *Biometrics*, 75(2), 582-592.
+
+4.  Grinde, K, Arbet, J, Green, A, **O’Connell MJ**, Valcarcel, A,
+    Westra, J, Tintle, N. (2017). Illustrating, quantifying and
+    correcting for bias in post-hoc testing strategies: an application
+    to gene-based rare variant tests of association. *Frontiers in
+    Genetics*, 8:117.
+
+### Collaborative Work
+
+1.  Upreti A, Padula SL, Tangeman JA, Wagner BD, **O’Connell MJ**,
+    Jaquish TJ, Palko R, Mantz C, Anand D, Lovicu FJ, Lachke SA,
+    Robinson ML. (2023). Lens epithelial explants treated with vitreous
+    humor undergo alterations in chromatin landscape with concurrent
+    activation of genes associated with fiber cell differentiation and
+    innate immune response. *Cells*, 12, 501.
+    <https://doi.org/10.3390/cells12030501>.
+
+2.  Burns MPA, **O’Connell MJ**, Schaeffer PJ, Berg DJ. (2022). Elevated
+    salinity and temperature associated with climate change threaten the
+    survival and conservation of desert spring amphipods. *Aquatic
+    Conservation: Marine and Freshwater Ecosystems*, 32(3): 457-465.
+    <https://doi.org/10.1002/aqc.3752>
+
+3.  Grannon KY, **O’Connell MJ**, Larson N, Pelletier JE, Nanney MS.
+    (2018). State agency implementation support of weight-related school
+    policies and obesity prevalence linkages. *Journal of School
+    Health*, 88(9):685-692.
+
+### Software
+
+1.  **O’Connell MJ** and Lock EF. (2016). r.jive: Perform JIVE
+    Decompositions for Multi-Source Data. R package version 2.1.
+    <http://CRAN.R-project.org/package=r.jive>
